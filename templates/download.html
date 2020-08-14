@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<br>
+<div class="card">
+   <div class="card-body px-lg-5 pt-0">
+   	<br>
+	<center><p>Télécharger résultats : <a href="{{ url_for('static', filename=file) }}">{{file}}</a></p></center>
+	<br>
+	<center><a href="http://192.168.1.59:8080"> Retour à l'acceuil </a></center>
+
+</div>
+</div>
+
+{% endblock %}

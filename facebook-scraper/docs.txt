@@ -1,0 +1,9 @@
+Examples of commands to launch on cmd
+
+#Scraping page account "orangeactu" for 10 posts
+python facebook_scraper.py -a orangeactu -f data/out.csv -p 100
+
+#Scraping group account "fifamoivoizana eto madagascar" for 10 posts
+python facebook_scraper.py -g fifamoivoizana -f data/out.csv -p 10
+
+N.B: pass "out.csv" to Gsheet to solve encoding issues

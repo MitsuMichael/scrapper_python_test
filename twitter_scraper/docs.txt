@@ -1,0 +1,9 @@
+#install twitter_scraper : pip3 install twitter_scraper
+
+#Scraping tweet du compte "RFI"
+python main.py -t RFI -f output_tweet.csv -p 100
+
+#Scraping Hashtags "#covid"
+python main.py -t #covid -f output_hashtag.csv -p 100
+
+N.B: pass "out.csv" to Gsheet to solve encoding issues

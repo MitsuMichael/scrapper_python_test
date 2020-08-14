@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card">
+	<h5 class="card-header info-color white-text text-center py-4">
+	    <strong>Scraping tools</strong>
+	</h5>
+
+    <div class="card-body px-lg-5 pt-0">
+
+    	  <!-- Grid row -->
+		  <div class="form-group row" style="margin-top: 2em;">
+		    <!-- Default input -->
+		    <label for="inputEmail3" class="col-sm-2 col-form-label">RS:</label>
+		    <div class="col-sm-10">
+		      <!-- Default inline 1-->
+
+					<label style="margin-right: 15px;"><input type="radio" name="netRadio" value="fb" checked="checked"> FB</label>
+	        		<label style="margin-right: 15px;"><input type="radio" name="netRadio" value="tw"> TW</label>
+	        		<label style="margin-right: 15px;"><input type="radio" name="netRadio" value="pt"> PT</label>
+
+		    </div>
+		  </div>
+		<!-- DIV FB -->
+		<div class="fb box">
+		<!-- Default horizontal form -->
+		<form action = "http://localhost:5000/run" method = "POST">
+		  <input type="radio" name="rs" value="fb" checked="checked" style="display: none">
+		  <!-- Grid row -->
+		  <div class="form-group row">
+		    <!-- Default input -->
+		    <label for="inputEmail3" class="col-sm-2 col-form-label">Type :</label>
+		    <div class="col-sm-10">
+		      <select name="type" id="type" class="browser-default custom-select">
+				  <option value="page">page</option>
+				  <option value="groupe">groupe</option>
+			  </select>
+		    </div>
+		  </div>
+		  <!-- Grid row -->
+		  <div class="form-group row">
+		    <!-- Default input -->
+		    <label for="inputEmail3" class="col-sm-2 col-form-label">ID:</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="id" class="form-control" placeholder="ID page ou groupe">
+		    </div>
+		  </div>
+		  <!-- Grid row -->
+
+		  <!-- Grid row -->
+		  <div class="form-group row">
+		    <!-- Default input -->
+		    <label for="inputPassword3" class="col-sm-2 col-form-label">Nbre:</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="nombre post" class="form-control" placeholder="nombre de post à scraper">
+		    </div>
+		  </div>
+		  <!-- Grid row -->
+		  <div class="form-group row">
+		    <!-- Default input -->
+		    <label for="inputPassword3" class="col-sm-2 col-form-label">Output:</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="fichier" class="form-control" placeholder="nom fichier ouput .CSV">
+		    </div>
+		  </div>
+
+		  <!-- Grid row -->
+		  <div class="form-group row">
+		    <div class="col-sm-10">
+		      <button type="submit" id="center" class="btn btn-primary btn-md">run</button>
+		    </div>
+		  </div>
+		  <!-- Grid row -->
+		</form>
+		</div>
+		<!-- End DIV FB -->
+
+		<!--DIV TW -->
+		<div class="tw box" style="display: none;">
+			<!-- Default horizontal form -->
+			<form action = "http://localhost:5000/run" method = "POST">
+				<input type="radio" name="rs" value="tw" checked="checked" style="display: none">
+
+		  <!-- Grid row -->
+		  <div class="form-group row">
+		    <!-- Default input -->
+		    <label for="inputEmail3" class="col-sm-2 col-form-label">Type :</label>
+		    <div class="col-sm-10">
+		      <select name="type" id="type" class="browser-default custom-select">
+				  <option value="page">hashtag</option>
+				  <option value="groupe">compte</option>
+			  </select>
+		    </div>
+		  </div>
+		  <!-- Grid row -->
+		  <div class="form-group row">
+		    <!-- Default input -->
+		    <label for="inputEmail3" class="col-sm-2 col-form-label">ID:</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="id" class="form-control" placeholder="ID compte ou hashtag">
+		    </div>
+		  </div>
+		  <!-- Grid row -->
+
+		  <!-- Grid row -->
+		  <div class="form-group row">
+		    <!-- Default input -->
+		    <label for="inputPassword3" class="col-sm-2 col-form-label">Nbre:</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="nombre post" class="form-control" placeholder="nombre de post à scraper">
+		    </div>
+		  </div>
+		  <!-- Grid row -->
+		  <div class="form-group row">
+		    <!-- Default input -->
+		    <label for="inputPassword3" class="col-sm-2 col-form-label">Output:</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="fichier" class="form-control" placeholder="nom fichier ouput .CSV">
+		    </div>
+		  </div>
+
+		  <!-- Grid row -->
+		  <div class="form-group row">
+		    <div class="col-sm-10">
+		      <button type="submit" id="center" class="btn btn-primary btn-md">run</button>
+		    </div>
+		  </div>
+		  <!-- Grid row -->
+		</form>
+		</div>
+		<!--End DIV TW -->
+
+		<!--DIV PT -->
+		<div class="pt box" style="display: none;">
+			<!-- Default horizontal form -->
+			<form action = "http://localhost:5000/run" method = "POST">
+				<input type="radio" name="rs" value="pt" checked="checked" style="display: none">
+
+		  <!-- Grid row -->
+		  <div class="form-group row">
+		    <!-- Default input -->
+		    <label for="inputEmail3" class="col-sm-2 col-form-label">Mot:</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="mot_pt" class="form-control" placeholder="entrer mot clé">
+		    </div>
+		  </div>
+		  <!-- Grid row -->
+
+		  <!-- Grid row -->
+		  <div class="form-group row">
+		    <!-- Default input -->
+		    <label for="inputPassword3" class="col-sm-2 col-form-label">Email:</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="email" class="form-control" placeholder="votre email PT">
+		    </div>
+		  </div>
+		  <!-- Grid row -->
+		  <div class="form-group row">
+		    <!-- Default input -->
+		    <label for="inputPassword3" class="col-sm-2 col-form-label">Pswd:</label>
+		    <div class="col-sm-10">
+		      <input type="password" name="pswd" class="form-control" placeholder="mot de passe">
+		    </div>
+		  </div>
+		  <!-- Grid row -->
+		  <div class="form-group row">
+		    <!-- Default input -->
+		    <label for="inputPassword3" class="col-sm-2 col-form-label">Output:</label>
+		    <div class="col-sm-10">
+		      <input type="text" name="fichier" class="form-control" placeholder="nom fichier ouput .CSV">
+		    </div>
+		  </div>
+
+		  <!-- Grid row -->
+		  <div class="form-group row">
+		    <div class="col-sm-10">
+		      <button type="submit" id="center" class="btn btn-primary btn-md">run</button>
+		    </div>
+		  </div>
+		  <!-- Grid row -->
+		</form>
+		</div>
+		<!--End DIV PT-->
+</div>
+</div>
+<!-- Default horizontal form -->
+
+{% endblock %}
