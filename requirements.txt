@@ -1,0 +1,5 @@
+requests
+requests_html
+more_itertools
+flask
+gunicorn
